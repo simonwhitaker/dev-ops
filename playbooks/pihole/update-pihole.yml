@@ -1,7 +1,9 @@
 ---
-- hosts: dns
+- hosts: pihole
   tasks:
-  - name: update gravity
+  - name: update pihole
     become: yes
     become_method: sudo
     command: /usr/local/bin/pihole -up
+    register: update_pihole
+    changed_when: update_pihole.stdout is search('Update Complete')

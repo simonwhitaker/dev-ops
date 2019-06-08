@@ -1,0 +1,8 @@
+---
+- hosts: raspberrypi
+  tasks:
+  - name: install emacs
+    become: yes
+    apt:
+      name: emacs-nox
+      state: latest
