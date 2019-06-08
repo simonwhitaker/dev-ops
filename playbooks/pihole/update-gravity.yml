@@ -1,0 +1,7 @@
+---
+- hosts: dns
+  tasks:
+  - name: update gravity
+    become: yes
+    become_method: sudo
+    command: /usr/local/bin/pihole -g
