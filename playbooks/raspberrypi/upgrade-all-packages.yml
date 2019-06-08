@@ -1,0 +1,7 @@
+---
+- hosts: raspberrypi
+  tasks:
+  - name: update all packages to the latest version
+    become: yes
+    apt:
+      upgrade: dist
