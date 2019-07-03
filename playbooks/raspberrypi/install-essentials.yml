@@ -2,6 +2,10 @@
 - hosts: raspberrypi
   become: yes
   tasks:
+  - name: install latest aptitude
+    apt:
+      name: aptitude
+      state: latest
   - name: install latest emacs
     apt:
       name: emacs-nox
